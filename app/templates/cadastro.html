@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/login.css') }}">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="login-form">
+        <div class="img-holder">
+            <img style="width: 60px; margin: .8rem;" src="{{ url_for('static', filename='./images/easy.png') }}">
+            <img style="width: 40px; margin: .8rem;" src="https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/2496/not-found-image-15383864787lu.jpg">
+        </div>
+        <span>Easy Software</span>
+        <form action="" method="post">
+            <div class="row">
+                <label for="cad_name">Nome</label><br>
+                <input type="text" name="cad_name" id="cad_name" placeholder="Ex.: José Silva">
+                <label for="cad_username">Nome de Usuário</label><br>
+                <input type="text" name="cad_username" id="cad_username" placeholder="Ex.: ze_silva6655">
+                <label for="cad_role">Cargo</label><br>
+                <input type="text" name="cad_role" id="cad_role" placeholder="Ex.: Supervisor">
+                <label>Senha</label><br>
+                <input type="password" name="cad_password" id="cad_password" placeholder="**********">
+            </div>            
+            
+            <button type="submit">Cadastrar</button>
+            <a href="/login">Entrar na sua conta</a>
+        </form>
+    </div>    
+</body>
+</html>

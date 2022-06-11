@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/produtos.css') }}">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="content-container">
+        <div class="img-holder">
+            <img style="width: 60px; margin-top: .8rem;" src="{{ url_for('static', filename='./images/easy.png') }}">
+        </div>
+        <span class="content-title">
+            Easy Software
+        </span>
+
+        <span class="content-title small">
+           Produtos
+        </span>
+        <div class="button-holder">
+            <a class="btn-1" href="/produtos">Produtos</a>
+            <a class="btn-2" href="/estoque">Estoque</a>
+            <a class="btn-3" href="/prateleira">Prateleira</a>
+        </div>
+
+        <div class="container-row">
+            <div class="wrapper">
+                <span>Situação do Produto</span>
+                {% if disponibility %}
+                    <p>Disponivel</p>
+                {% else %}
+                    <p>Indisponivel</p>
+                {% endif %}
+    
+                <div class="quantity">
+                    <span>
+                        Quantidade disponível
+                    </span>
+                    <br/>
+                    <p>
+                        {% if disponibility %}
+                            {{ quantity }}
+                        {% endif %}
+                    </p>
+                </div>
+    
+            </div>
+
+            <div class="wrapper search">
+                <form method="post">
+                    <input type="text" name="search" placeholder="Código de barras"><br>
+                    <div class="box">
+                       {{ product }} <br>
+                       {{ brand }}
+                    </div>
+                    <button type="submit">Pesquisar Situação</button>
+                </form>    
+            </div>
+        </div>
+        <div class="button-holder">
+            <a href="/produtos/estatisticas">Relatório dos Produtos</a>
+        </div>
+
+    </div>
+    
+</body>
+</html>

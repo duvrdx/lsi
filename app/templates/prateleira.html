@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/prateleira.css') }}">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="content-container">
+        <div class="img-holder">
+            <img style="width: 60px; margin-top: .8rem;" src="{{ url_for('static', filename='./images/easy.png') }}">
+        </div>
+        <span class="content-title">
+            Easy Software
+        </span>
+
+        <span class="content-title small">
+           Prateleira
+        </span>
+        <div class="button-holder">
+            <a class="btn-1" href="/produtos">Produtos</a>
+            <a class="btn-2" href="/estoque">Estoque</a>
+            <a class="btn-3" href="/prateleira">Prateleira</a>
+        </div>
+
+        <div class="container-row">
+            <table class="table">
+                <tr>
+                  <th>Código de Barras</th>
+                  <th>Nome</th>
+                  <th>Marca</th>
+                  <th>Preço</th>
+                  <th>Quantidade</th>
+                </tr>
+                {% for product in products %}
+                <tr>
+                    <td> {{ product.barcode }} </td>
+                    <td> {{ product.name }} </td>
+                    <td> {{ product.brand }} </td>
+                    <td> R$ {{ product.price }} </td>
+                    <td> {{ product.amount }} </td>
+                </tr>
+                {% endfor %}
+              </table> 
+        </div>
+
+    </div>
+    
+</body>
+</html>

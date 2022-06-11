@@ -1,0 +1,59 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 60%;
+    background-color: #09BA65;
+    border-radius: 1rem;
+}
+
+.login-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.login-form form input{
+    width: 100%;
+}
+
+.login-form form button{
+    width: 60%;
+    margin-top: .8rem;
+}
+
+.login-form span{
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: .8rem;
+}
+
+
+.holder{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.holder:first-child{
+    margin-right: 0.5rem;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/estoque.css') }}">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="content-container">
+        <div class="img-holder">
+            <img style="width: 60px; margin-top: .8rem;" src="{{ url_for('static', filename='./images/easy.png') }}">
+        </div>
+        <span class="content-title">
+            Easy Software
+        </span>
+
+        <span class="content-title small">
+           Agendamento
+        </span>
+        <div class="button-holder">
+            <a class="btn-1" href="/produtos">Produtos</a>
+            <a class="btn-2" href="/estoque">Estoque</a>
+            <a class="btn-3" href="/prateleira">Prateleira</a>
+        </div>
+
+        <div class="button-holder">
+            <a href="/estoque">Adicionar Produtos</a>
+            <a href="/estoque/info">Informações de Estoque</a>
+            <a href="/estoque/agend">Agendamento</a>
+        </div>
+
+        <div class="holder">
+            <form action="" method="post">
+                <label for="agend_fornec">Fornecedor</label><br>
+                <input type="text" name="agend_fornec" id="agend_fornec">
+                <br>
+                <label for="agend_date">Data</label><br>
+                <input type="date" name="agend_date" id="agend_date">
+                <br>
+    
+                <button type="submit">Agendar</button>
+            </form>
+    
+            <div class="holder-agend">
+                <span class="bold">Agendamentos</span>
+                <table class="table">
+                    <tr>
+                      <th>Fornecedor</th>
+                      <th>Data de Entrega</th>
+                    </tr>
+                    {% for agendamento in agendamentos %}
+                    <tr>
+                        <td> {{ agendamento.provider_name }} </td>
+                        <td> {{ agendamento.delivery_date }} </td>
+                    </tr>
+                    {% endfor %}
+                  </table> 
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

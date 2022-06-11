@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/homepage.css') }}">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="content-container">
+        <div class="img-holder">
+            <img style="width: 60px; margin-top: .8rem;" src="{{ url_for('static', filename='./images/easy.png') }}">
+        </div>
+        <span class="content-title">
+            Easy Software - Logado
+        </span>
+        <div class="button-holder">
+            <a class="btn-1" href="/produtos">Produtos</a>
+            <a class="btn-2" href="/estoque">Estoque</a>
+            <a class="btn-3" href="/prateleira">Prateleira</a>
+        </div>
+        <p>Bem vindo, <span class="bold">{{ user_role }}</span>. Selecione o próximo passo!</p>
+        <a href=/logout>Sair</a>
+    </div>
+    
+</body>
+</html>
